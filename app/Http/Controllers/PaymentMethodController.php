@@ -9,6 +9,7 @@ use App\Http\Requests\UpdatePaymentMethodRequest;
 
 class PaymentMethodController extends Controller
 {
+    
     public function index()
     {
         $paymentMethods = PaymentMethod::all();
