@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
+import PaymentMethod from '@/Components/PaymentMethod';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
@@ -23,6 +24,9 @@ export default function Authenticated({ user, header, children }) {
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
+                                </NavLink>
+                                <NavLink href={route('PaymentMethod')} active={route().current('PaymentMethod')}>
+                                PaymentMethod
                                 </NavLink>
                             </div>
                         </div>
@@ -94,6 +98,9 @@ export default function Authenticated({ user, header, children }) {
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('PaymentMethod')} active={route().current('PaymentMethod')}>
+                        PaymentMethod
                         </ResponsiveNavLink>
                     </div>
 

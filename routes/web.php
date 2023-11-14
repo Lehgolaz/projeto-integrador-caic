@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -36,5 +37,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('payment-method', PaymentMethodController::class);
     Route::resource('status-order', StatusOrderController::class);
 });
+
+Route::resource('paymentMethod', PaymentMethodController::class)
+    ->only(['index', 'edit','store', 'show', 'update'])
+    ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
