@@ -34,11 +34,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('payment-method', PaymentMethodController::class);
-    Route::resource('status-order', StatusOrderController::class);
+     
 });
 
-Route::resource('paymentMethod', PaymentMethodController::class)
+Route::resource('payment-methods', PaymentMethodController::class)
+    ->only(['index', 'edit','store', 'show', 'update'])
+    ->middleware(['auth', 'verified']);
+    
+Route::resource('status-orders', StatusOrderController::class)
     ->only(['index', 'edit','store', 'show', 'update'])
     ->middleware(['auth', 'verified']);
 

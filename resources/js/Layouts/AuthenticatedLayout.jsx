@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
-import PaymentMethod from '@/Components/PaymentMethod';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/react';
@@ -25,9 +24,13 @@ export default function Authenticated({ user, header, children }) {
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
-                                <NavLink href={route('PaymentMethod')} active={route().current('PaymentMethod')}>
-                                PaymentMethod
+                                <NavLink href={route('payment-methods.index')} active={route().current('payment-methods.index')}>
+                                    Payment Method
                                 </NavLink>
+                                <NavLink href={route('status-orders.index')} active={route().current('status-orders.index')}>
+                                    Status Order
+                                </NavLink>
+                             
                             </div>
                         </div>
 
@@ -99,9 +102,13 @@ export default function Authenticated({ user, header, children }) {
                         <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
                             Dashboard
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink href={route('PaymentMethod')} active={route().current('PaymentMethod')}>
-                        PaymentMethod
+                        <ResponsiveNavLink href={route('payment-methods.index')} active={route().current('payment-methods.index')}>
+                            Payment Methods
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink href={route('status-orders.index')} active={route().current('status-orders.index')}>
+                            Status Order
+                        </ResponsiveNavLink>
+                    
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
