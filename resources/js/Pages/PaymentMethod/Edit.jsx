@@ -11,7 +11,7 @@ export default function Create({ auth, states, PaymentMethod }) {
 
     const submit = (e) => {
         e.preventDefault();
-        patch(route('payment-methods.update', PaymentMethod.id), {});
+        patch(route('paymen-method.update', PaymentMethod.id), {});
     };
 
     const cancel = () => {

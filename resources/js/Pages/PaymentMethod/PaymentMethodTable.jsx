@@ -9,7 +9,7 @@ const CustomTable = () => {
     if (window.confirm(`Are you sure you want to remove the ${paymentmethod.name}`)) {
         // Implemente a lógica para remover o post (por exemplo, fazendo uma solicitação de exclusão)
         // Após a exclusão, redirecione para a página inicial ou uma página apropriada
-        router.delete(route("payment-methods.destroy", paymentmethod.id));
+        router.delete(route("paymen-method.destroy", paymentmethod.id));
     }
 };
 
@@ -17,8 +17,8 @@ const CustomTable = () => {
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
       <div className="flex items-center gap-4 mb-2">
         <NavLink
-          href={route('payment-methods.create')}
-          active={route().current('payment-methods.index')}
+          href={route('paymen-method.create')}
+          active={route().current('paymen-method.index')}
           className="inline-block py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           New Payment Methods
@@ -49,7 +49,7 @@ const CustomTable = () => {
               </th>
               <td className="px-6 py-4 text-right" style={{ width: '10%' }}>
                 <NavLink
-                  href={route('payment-methods.edit', { paymentmethod: paymentmethod.id })}
+                  href={route('paymen-method.edit', { paymentmethod: paymentmethod.id })}
                   className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 >
                   Edit

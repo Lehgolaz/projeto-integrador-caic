@@ -15,7 +15,7 @@ class PaymentMethodController extends Controller
      */
     public function index()
     {
-        return Inertia::render('payment-method/Index', [
+        return Inertia::render('PaymentMethod/Index', [
             'cities' =>
             PaymentMethod::with(['user:id,name', 'state:id,name'])->latest()->get(),
 
@@ -27,7 +27,7 @@ class PaymentMethodController extends Controller
      */
     public function create()
     {
-        return Inertia::render('payment-method/Create', [
+        return Inertia::render('PaymentMethod/Create', [
             'states' => PaymentMethod::select('id', 'name as label')->orderBy('name')->get(),
         ]);
     }
@@ -42,7 +42,7 @@ class PaymentMethodController extends Controller
         $create = $request->user()->cities()->create($city);
 
         if ($create) {
-            return redirect()->route('payment-methods.index');
+            return redirect()->route('PaymentMethods.index');
         }
         return abort(500);
     }
@@ -103,7 +103,7 @@ class PaymentMethodController extends Controller
         $delete = $city->delete();
 
         if ($delete) {
-            return redirect()->route('payment-methods.index');
+            return redirect()->route('PaymentMethods.index');
         }
 
         return abort(500);

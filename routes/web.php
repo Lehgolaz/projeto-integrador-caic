@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
      
 });
 
-Route::resource('payment-methods', PaymentMethodController::class)
+Route::resource('payment-method', PaymentMethodController::class)
     ->only(['index', 'edit','store', 'show', 'update'])
     ->middleware(['auth', 'verified']);
     

@@ -11,7 +11,7 @@ export default function Create({ auth, states }) {
     const submit = (e) => {
         e.preventDefault(); 
         console.log(data)
-        post(route("payment-methods.store"), {
+        post(route("paymen-method.store"), {
             onSuccess: () => {
                 reset();
             },
